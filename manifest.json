@@ -6,21 +6,18 @@
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": "hellokitty1.png",
+    "default_icon": "hk.png",
     "default_popup": "popup.html"
     // "default_title": "Click here!"
   },
 
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["popup.js"]
+      "matches": ["*://*/*"],
+      "js": ["bower_components/angular/angular.js", "js/popup.js", "js/url.js", "js/storage.js"],
+      "run_at": "document_start"
     }
   ],
 
-  "permissions": [
-    "tabs",
-    "activeTab",
-    "https://ajax.googleapis.com/*"
-  ]
+  "permissions": ["http://*/*", "https://*/*", "tabs", "storage"]
 }

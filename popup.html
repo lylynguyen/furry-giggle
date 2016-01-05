@@ -1,34 +1,28 @@
 
 <!DOCTYPE html>
 
-<html ng-csp>
+<html ng-app="wishListApp" ng-csp>
   <head>
-    <title>Wish List</title>
+    <title>My First Chrome Extension</title>
 
-    <script src="client/lib/angular/angular.js"></script>
-    <script src="popup.js"></script>
-    
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
-    </style>
-     <!-- angular cdn -->
-
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
     
   </head>
-  <body ng-app="wishListApp" ng-controller="wishListCtrl">
+  <body ng-controller="wishListCtrl">
 
-     <div>Test: {{ url }}</div>
+     <!-- <div class="message">message : {{ message }}</div> -->
+     <div class="title">Product name: {{ title }}</div>
+     <div class="url">Product url: {{ url }}</div>
+     <!-- <div class="model">tab: {{ response }}</div> -->
 
+    <form class="price-form">
+      <input type="number" ng-model="amount">
+      <span id="currency-default">{{ amount | currency }}</span>
+
+    </form>
+    
   </body>
 </html>
 
