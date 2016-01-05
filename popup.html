@@ -1,13 +1,11 @@
 
 <!DOCTYPE html>
-<html>
 
-<html ng-app="wishListApp" ng-csp>
+<html ng-csp>
   <head>
-    <title>My First Chrome Extension</title>
+    <title>Wish List</title>
 
-    <script src="/node_modules/angular/angular.js"></script>
-
+    <script src="client/lib/angular/angular.js"></script>
     <script src="popup.js"></script>
     
     <style>
@@ -27,7 +25,7 @@
 
     
   </head>
-  <body ng-controller="wishListCtrl">
+  <body ng-app="wishListApp" ng-controller="wishListCtrl">
 
      <div>Test: {{ url }}</div>
 
